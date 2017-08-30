@@ -1,0 +1,61 @@
+﻿@model VMTrail.Models.Req
+@{
+    ViewBag.Title = "List";
+}
+
+<h2>List</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+@*<table class="table">
+    <tr>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>*@
+
+
+@{var Employees = Model.Employees;
+    var authusers = Model.authusers;}
+<table>
+    <tr>
+        <th>
+            Name
+        </th>
+    </tr>
+    @foreach (var item in Model.Employees)
+    {
+        <tr>
+            <td>
+                @item.name
+            </td>
+        </tr>
+    }
+</table>
+
+<table>
+    <tr>
+        <th>
+            Name
+        </th>
+    </tr>
+    @foreach (var item in authusers)
+    {
+        <tr>
+            <td>
+                @item.name
+            </td>
+        </tr>
+    }
+</table>

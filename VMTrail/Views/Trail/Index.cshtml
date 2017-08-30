@@ -1,0 +1,47 @@
+﻿@*@model IEnumerable<VMTrail.Models.Req>*@
+@model VMTrail.Models.Req
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+
+@{var Employees = Model.Employees;
+    var authusers = Model.authusers;}
+<table>
+    <tr>
+        <th>
+            Name
+        </th>
+    </tr>
+    @foreach (var item in Employees)
+    {
+        <tr>
+            <td>
+                @item.name
+            </td>
+        </tr>
+    }
+</table>
+
+<table>
+    <tr>
+        <th>
+            Name
+        </th>
+    </tr>
+    @foreach (var item in authusers)
+    {
+        <tr>
+            <td>
+                @item.name
+            </td>
+        </tr>
+    }
+</table>
