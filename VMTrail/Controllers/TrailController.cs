@@ -35,5 +35,22 @@ namespace VMTrail.Controllers
             };
             return View(r);
         }
+
+
+        public ActionResult SecondList()
+        {
+            DataBaseOneEntities1 db = new DataBaseOneEntities1();
+            //Author a = new Author();
+            //book b = new book();
+            //List<book> li = new List<book>;
+            //return (li);
+            ReqJoin r = new ReqJoin
+            {
+                books = db.books.ToList(),
+                
+            };
+
+            return View(r);
+        }
     }
 }

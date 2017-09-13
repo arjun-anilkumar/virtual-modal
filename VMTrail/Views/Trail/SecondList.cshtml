@@ -1,4 +1,4 @@
-﻿@model VMTrail.Models.Req
+﻿@model VMTrail.Models.ReqJoin
 @{
     ViewBag.Title = "List";
 }
@@ -24,49 +24,30 @@
 }
 
 </table>*@
-
-
-@{var Employees = Model.Employees;
-    var authusers = Model.authusers;}
+@{var books = Model.books;}
 <table>
     <tr>
         <th>
             Name
         </th>
-        @*<th>
-            email
-        </th>*@
+        <th>
+            -Book Name
+        </th>
+
+        
     </tr>
-    @foreach (var item in Model.Employees)
+    @foreach (var item in books)
     {
         <tr>
             <td>
                 @item.name
             </td>
+
+            <td>
+                @item.Author.name
+            </td>
+
         </tr>
     }
-    @*@foreach (var item in Model.authusers)
-    {
-        <tr>
-            <td>
-                @item.email
-            </td>
-        </tr>
-    }*@
 </table>
 
-<table>
-    <tr>
-        <th>
-            Name
-        </th>
-    </tr>
-    @foreach (var item in authusers)
-    {
-        <tr>
-            <td>
-                @item.name
-            </td>
-        </tr>
-    }
-</table>
